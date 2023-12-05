@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludzie na układzie okresowym</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+    /* Styl dla małych ekranów (np. smartfony) */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Styl dla średnich ekranów (np. tablety) */
+}
+
+@media only screen and (min-width: 1025px) {
+    /* Styl dla dużych ekranów (np. komputery stacjonarne) */
+}
+
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eaeaea;
+    }
+    
+    .slide img {
+        max-width: 300px;
+        border-radius: 15%;
+    }
+
+    .presentation img {
+        max-width: 400px;
+    }
+
+    .presentation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide {
+      display: none;
+      text-align: center;
+      position: relative;
+    }
+
+    .slide.active {
+      display: block;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .info-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      margin-top: 20px;
+    }
+
+    .info-box {
+      background-color: #535353;
+      color: #ffffff;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: left;
+      border: 2px solid #000; /* Dodaj czarną obramówkę */
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="presentation">
+    <div class="slide active">
+    <img src="https://i.pinimg.com/736x/82/c8/3d/82c83d0c1bb4ac768b438286f1e01464.jpg"></img>
+      <h1>Ludzie na układzie okresowym</h1>
+      <p>Odkrywcy i naukowcy uhonorowani w nazwach pierwiastków</p>
+      <button onclick="nextSlide()">Rozpocznij</button>
+    </div>
+
+    <div class="slide">
+    <img src="https://bi.im-g.pl/im/9d/b0/12/z19596189IEG,Dmitrij-Iwanowicz-Mendelejew---chemik-i-odkrywca-p.jpg"></img>
+      <h1>Dmitrij Mendelejew</h1>
+      <p>Pierwiastek: Mendelew (Md)</p>
+      <p>Ojciec układu okresowego</p>
+      <p>Rosyjski chemik, ułożył pierwiastki według ich właściwości chemicznych</p>
+      <div class="info-container">
+        <div class="info-box">Dzieciństwo i Edukacja:<br>
+            <br>
+           - Dmitrij Mendelejew urodził się 8 lutego 1834 roku w Tobolsku,<br>
+            Rosja, w rodzinie o tradycjach pedagogicznych.<br>
+            - Jego edukacja chemiczna rozpoczęła się na Uniwersytecie w Petersburgu,<br>
+             gdzie studiował chemię i uzyskał stopień naukowy.</div>
+        <div class="info-box">Prawo Mendelejewa:<br>
+            <br>
+           - Jego najważniejszym osiągnięciem jest sformułowanie Prawa Mendelejewa,<br>
+             które opisuje zależności między masami atomowymi a właściwościami<br>
+              chemicznymi pierwiastków.<br>
+           - Dzięki temu prawu był w stanie przewidzieć istnienie pierwiastków,<br>
+            które wówczas nie były jeszcze odkryte, takich jak german.</div>
+        <div class="info-box">Prace Naukowe:<br>
+            <br>
+          - Mendelejew prowadził badania w różnych dziedzinach, w tym w dziedzinie<br>
+             termodynamiki, spektroskopii i metalurgii.<br>
+           - Jego prace nad układem okresowym były przełomowe dla chemii i przyczyniły <br>
+           się do zrozumienia organizacji pierwiastków.</div>
+        <div class="info-box">Dziedzictwo i Uznania:<br>
+            <br>
+           - Mendelejew jest powszechnie uważany za "Ojca układu okresowego"<br>
+            ze względu na jego zasługi w organizacji pierwiastków.<br>
+           - Jego wkład w rozwój chemii został doceniony na całym świecie,<br>
+            a Prawo Mendelejewa stało się fundamentalnym elementem tej nauki.</div>
+      </div>
+      <button onclick="previousSlide()">Poprzedni</button>
+      <button onclick="nextSlide()">Następny</button>
+    </div>
+
+    <div class="slide">
+    <img src="https://uniwersyteckie.pl/sites/default/files/foto-naglowki/2022-10/z27076339ICR%2CMaria-Sklodowska-Curie.jpg"></img>
+      <h1>Marie Skłodowska Curie</h1>
+      <p>Pierwiastek: Kiur (Cm)</p>
+      <p>Dwukrotna laureatka Nagrody Nobla w dziedzinie fizyki i chemii</p>
+      <div class="info-container">
+        <div class="info-box">Badania nad promieniotwórczością:<br>
+            <br>
+            - Maria Skłodowska Curie była pionierką<br>
+             w badaniach nad promieniotwórczością. Wspólnie z mężem, Pierrem Curie,<br>
+             odkryła pierwiastki promieniotwórcze, takie jak polon i rad.</div>
+        <div class="info-box">Nagrody Nobla:<br>
+            <br>
+           - Maria Curie jest jedyną osobą, która zdobyła<br>
+             Nagrodę Nobla w dwóch różnych dziedzinach nauki.<br>
+              Pierwszą otrzymała w dziedzinie fizyki w 1903 roku<br>
+               (razem z mężem i Henri Becquerel), a drugą w dziedzinie<br>
+                chemii w 1911 roku za odkrycie radu i polonu.</div>
+        <div class="info-box">Zaangażowanie w I wojnę światową:<br>
+            <br>
+           - W trakcie I wojny światowej Maria Curie zorganizowała<br>
+             pierwszy na świecie mobilny szpital rentgenowski.<br>
+              Sama pracowała jako pielęgniarka i prowadziła <br>
+              badania nad skutecznością promieniotwórczości w leczeniu ran.</div>
+        <div class="info-box">Instytut Radowy:<br>
+            <br>
+           - Maria Skłodowska Curie założyła Instytut Radowy w Paryżu,<br>
+             który później został nazwany Instytutem Curie. Instytut ten był<br>
+              miejscem, gdzie kontynuowano badania nad radioaktywnością.</div>
+      </div>
+      <button onclick="previousSlide()">Poprzedni</button>
+      <button onclick="nextSlide()">Następny</button>
+    </div>
+
+    <div class="slide">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Sir_Ernest_Rutherford_LCCN2014716719_-_restoration1.jpg"></img>
+          <h1>Ernest Rutherford</h1>
+          <p>Pierwiastek: Rutherford (Rf)</p>
+          <p>Lord Ernest Rutherford dokonał kluczowych odkryć dotyczących struktury atomu.</p>
+          <div class="info-container">
+            <div class="info-box">Wczesne Życie i Edukacja:<br>
+                <br>
+               - Lord Ernest Rutherford urodził się 30 sierpnia 1871 roku w Nowej Zelandii.<br>
+               - Uzyskał wykształcenie w Wielkiej Brytanii, studiując na Uniwersytecie w Cambridge,<br>
+                gdzie zdobył tytuł naukowy.</div>
+            <div class="info-box">Model Atomu Rutherforda:<br>
+                <br>
+               - Jego najbardziej znane osiągnięcie to opracowanie modelu atomu,<br>
+                znane jako model Rutherforda.<br>
+               - W jego eksperymencie z rozpraszaniem cząstek alfa na cienkimi foliach<br>
+                złota, odkrył, że atom ma jądro z dużą masą i naładowane dodatnio,<br>
+                 co było kluczowe dla zrozumienia struktury atomu.</div>
+            <div class="info-box">Badania nad Promieniotwórczością:<br>
+                <br>
+               - Rutherford był pionierem w badaniach nad promieniotwórczością.<br>
+               - Jego prace przyczyniły się do zidentyfikowania i zrozumienia różnych<br>
+                rodzajów promieniowania oraz wprowadziły nowe pojęcia, takie jak rozpad<br>
+                 radioaktywny.</div>
+            <div class="info-box">Nagrody i Dziedzictwo:<br>
+                <br>
+               - Za swoje wybitne osiągnięcia naukowe Rutherford został uhonorowany<br>
+                wieloma nagrodami, w tym Nagrodą Nobla w dziedzinie chemii w 1908 roku.<br>
+               - Jego dziedzictwo obejmuje wkład w rozwój fizyki jądrowej i fundamenty<br>
+                teoretyczne dla badań nad strukturą atomową.</div>
+          </div>
+          <button onclick="previousSlide()">Poprzedni</button>
+          <button onclick="nextSlide()">Następny</button>
+        </div>
+
+        <div class="slide">
+            <img src="https://s.ciekawostkihistoryczne.pl/uploads/2019/03/Albert_Einstein_Head-340x340.jpg"></img>
+              <h1>Albert Einstein</h1>
+              <p>Pierwiastek: Einstein (Rf)</p>
+              <p>Nazwa ta została nadana na cześć Alberta Einsteina, słynnego fizyka, za jego wkład w teorię względności i inne istotne dziedziny nauki.</p>
+              <div class="info-container">
+                <div class="info-box">Wczesne Życie i Edukacja:<br>
+                    <br>
+                    - Albert Einstein urodził się 14 marca 1879 roku w Niemczech.<br>
+                    - Studiował fizykę na politechnice w Zurychu, gdzie zdobył tytuł naukowy.</div>
+                <div class="info-box">Teoria Względności:<br>
+                    <br>
+                   - Jego najbardziej znane osiągnięcie to rozwinięcie teorii względności.<br>
+                   - Teoria względności specjalna z 1905 roku zmieniła fundamentalnie nasze <br>
+                   rozumienie czasu, przestrzeni i masy, podczas gdy teoria względności ogólnej<br>
+                    z 1915 roku opisywała grawitację jako zakrzywianie przestrzeni-czasu.</div>
+                <div class="info-box">Efekt Fotoelektryczny:<br>
+                    <br>
+                   - Einstein przyczynił się do zrozumienia efektu fotoelektrycznego,<br>
+                    co wpłynęło na rozwój teorii kwantowej.<br>
+                   - Jego prace nad kwantami przyczyniły się do ugruntowania natury<br>
+                    korpuskularno-falowej światła.</div>
+                <div class="info-box">Nagrody i Aktywność Społeczna:<br>
+                    <br>
+                   - Za swoje wkłady w fizykę, Einstein otrzymał Nagrodę Nobla w dziedzinie fizyki w 1921 roku.<br>
+                   - Aktywnie angażował się w kwestie społeczne, wspierając prawa obywatelskie, pokój i<br>
+                    naukę, oraz był zaangażowany w ruch antynuklearny po II wojnie światowej.</div>
+              </div>
+              <button onclick="previousSlide()">Poprzedni</button>
+              <button onclick="nextSlide()">Następny</button>
+            </div>
+
+            <div class="slide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Niels_Bohr.jpg/800px-Niels_Bohr.jpg"></img>
+                  <h1>Niels Bohr</h1>
+                  <p>Pierwiastek: Bohrium (Bh)</p>
+                  <p>Nazwa ta upamiętnia duńskiego fizyka Nielsa Bohra, który znacząco przyczynił się do zrozumienia struktury atomu.</p>
+                  <div class="info-container">
+                    <div class="info-box">Wczesne Życie i Edukacja:<br>
+                        <br>
+                        - Niels Bohr urodził się 7 października 1885 roku w Kopenhadze, Danii.<br>
+                       - Studiował na Uniwersytecie Kopenhaskim, gdzie zdobył stopień doktora filozofii.</div>
+                    <div class="info-box">Model Atomu Bohra:<br>
+                        <br>
+                        - Jego najważniejszym wkładem było stworzenie modelu atomu Bohra w 1913 roku.<br>
+                       - Model ten opierał się na koncepcji kwantowania energii, a elektrony krążyły <br>
+                        wokół jądra atomowego na określonych orbitach.</div>
+                    <div class="info-box">Prace nad Spektrum Atomowym:<br>
+                        <br>
+                       - Bohr przeprowadził badania nad spektrum atomowym, co pomogło w zrozumieniu<br>
+                        ilościowego charakteru energii w poziomach energetycznych atomów.<br>
+                       - Jego model atomu umożliwił dokładne wyjaśnienie spektralnych linii<br>
+                        emisyjnych i absorpcyjnych.</div>
+                    <div class="info-box">Nagrody i Dziedzictwo:<br>
+                        <br>
+                        - Niels Bohr otrzymał Nagrodę Nobla w dziedzinie fizyki w 1922 roku<br>
+                         za rozwinięcie teorii struktury atomowej i promieniowania.<br>
+                        - Jego prace przyczyniły się do rozwoju kwantowej mechaniki i miały<br>
+                         wpływ na rozwój fizyki jądrowej.</div>
+                  </div>
+                  <button onclick="previousSlide()">Poprzedni</button>
+                  <button onclick="nextSlide()">Następny</button>
+                </div>
+
+                <div class="slide">
+                    <img src="data:image/jpeg;base64,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"></img>
+                      <h1>Enrico Fermi</h1>
+                      <p>Pierwiastek: Fermium (Fm)</p>
+                      <p>Enrico Fermiego był pionierem w dziedzinie fizyki jądrowej i prowadził badania nad reakcjami łańcuchowymi.</p>
+                      <div class="info-container">
+                        <div class="info-box">Wczesne Życie i Edukacja:<br>
+                            <br>
+                            - Enrico Fermi urodził się 29 września 1901 roku w Rzymie, Włochy.<br>
+                            - Studiował fizykę na Uniwersytecie w Pizie, gdzie uzyskał <br>
+                            doktorat w 1922 roku.</div>
+                        <div class="info-box">Teoria Fermiego-Diraca:<br>
+                            <br>
+                           - Fermi był współtwórcą teorii Fermiego-Diraca, która opisuje rozkład <br>
+                           statystyczny cząstek fermionowych w gazach kwantowych.<br>
+                           - Jego prace w tej dziedzinie przyczyniły się do zrozumienia zachowań<br>
+                            fermionów, takich jak elektrony.</div>
+                        <div class="info-box">Eksperymenty z Neutronami:<br>
+                            <br>
+                           - Fermi przeprowadził kluczowe eksperymenty z neutronami, co doprowadziło<br>
+                            do odkrycia reakcji jądrowej indukowanej przez neutrony.<br>
+                            - To odkrycie było kluczowe dla rozwoju energii jądrowej i przyczyniło <br>
+                            się do budowy pierwszego reaktora jądrowego.</div>
+                        <div class="info-box">Procesy Jądrowe i Nagrody:<br>
+                            <br>
+                            - Fermi odegrał istotną rolę w rozwinięciu teorii i praktyki reakcji jądrowych.<br>
+                            - Otrzymał Nagrodę Nobla w dziedzinie fizyki w 1938 roku za jego prace dotyczące<br>
+                             sztucznych promieniowania i nowych promieniotwórczych substancji.</div>
+                      </div>
+                      <button onclick="previousSlide()">Poprzedni</button>
+                      <button onclick="nextSlide()">Następny</button>
+                    </div>
+
+    <!-- Dodaj więcej slajdów z informacjami -->
+
+    <div class="slide">
+      <h1>Koniec prezentacji</h1>
+      <p>Dziękujemy za uwagę! Jakub Landa i Karol Wieczorek 2BT</p>
+      <button onclick="previousSlide()">Poprzedni</button>
+      <button onclick="restartPresentation()">Rozpocznij od nowa</button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    function nextSlide() {
+      const slides = document.querySelectorAll('.slide');
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    function previousSlide() {
+      const slides = document.querySelectorAll('.slide');
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    function restartPresentation() {
+      const slides = document.querySelectorAll('.slide');
+      slides[currentSlide].classList.remove('active');
+      currentSlide = 0;
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
